@@ -3,10 +3,14 @@ CC = c++
 FLAGS = -std=c++98 -Wall -Werror -Wextra
 
 SRC = main.cpp \
-	  ClapTrap.cpp \
+	  Animal.cpp \
+	  Dog.cpp \
+	  Cat.cpp 
 
 OBJ = main.o \
-	  ClapTrap.o
+	  Animal.o \
+	  Dog.o \
+	  Cat.o 
 
 all:$(NAME)
 
