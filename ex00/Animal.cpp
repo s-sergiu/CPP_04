@@ -23,17 +23,12 @@ Animal& Animal::operator = (const Animal &src)
 	return *this;
 }
 
-void Animal::makeSound(void)
+void Animal::makeSound(void) const
 {
-	if (type == "Cat")
-		std::cout<<"meow"<<std::endl;
-	else if (type == "Dog")
-		std::cout<<"woof"<<std::endl;
-	else 
-		std::cout<<"no sound"<<std::endl;
+	std::cout<<"* NO SOUND *"<<std::endl;
 }
 
-std::string Animal::getType(void)
+std::string Animal::getType(void) const
 {
-	return (type)
+	return (type);
 }

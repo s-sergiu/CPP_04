@@ -22,3 +22,8 @@ Cat& Cat::operator = (const Cat &src)
 	this->type = src.type;
 	return *this;
 }
+
+void Cat::makeSound() const
+{
+	std::cout<<"*Moew*"<<std::endl;
+}
