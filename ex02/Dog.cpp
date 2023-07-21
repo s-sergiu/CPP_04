@@ -13,7 +13,7 @@ Dog::~Dog()
 	std::cout<<"Dog destructor initialized."<<std::endl;
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy) : Animal()
 {
 	type = copy.type;	
 }
