@@ -12,7 +12,7 @@ int main()
 	};
 
 	Dog test;
-	Cat test1;
+	Dog test1;
 	delete(animals[0]);
 	delete(animals[1]);
 
@@ -28,8 +28,8 @@ int main()
 	test1.printIdeas();
 
 	std::cout<<"==============================="<<std::endl;
-	Cat test3;
-	Cat test4(test1);
+	Dog test3;
+	Dog test4(test1);
 
 	test3 = test1;
 	test3.printIdeas();
