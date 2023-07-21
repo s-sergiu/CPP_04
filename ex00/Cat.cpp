@@ -12,7 +12,7 @@ Cat::~Cat()
 	std::cout<<"Cat destructor initialized."<<std::endl;
 }
 
-Cat::Cat(const Cat &copy)
+Cat::Cat(const Cat &copy) : Animal()
 {
 	type = copy.type;	
 }

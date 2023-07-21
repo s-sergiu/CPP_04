@@ -12,7 +12,7 @@ WrongCat::~WrongCat()
 	std::cout<<"WrongCat destructor initialized."<<std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &copy)
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal()
 {
 	type = copy.type;	
 }
