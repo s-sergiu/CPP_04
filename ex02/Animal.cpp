@@ -27,3 +27,8 @@ std::string Animal::getType(void) const
 {
 	return (type);
 }
+
+void Animal::makeSound() const 
+{
+	std::cout<<"* NO SOUND *"<<std::endl;
+}
