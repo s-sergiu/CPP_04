@@ -14,13 +14,15 @@ Cat::~Cat()
 	std::cout<<"Cat destructor initialized."<<std::endl;
 }
 
-Cat::Cat(const Cat &copy)
+Cat::Cat(const Cat &copy) : Animal()
 {
+	brain = new Brain();
 	type = copy.type;	
 }
 
 Cat& Cat::operator = (const Cat &src)
 {
+	this->brain = new Brain();
 	this->type = src.type;
 	return *this;
 }

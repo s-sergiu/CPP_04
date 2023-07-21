@@ -14,7 +14,7 @@ Brain::~Brain()
 Brain::Brain(const Brain &copy)
 {
 	for (int i = 0; i < 100; i++)
-		ideas[i] = copy.ideas[i];	
+		this->ideas[i] = copy.ideas[i];	
 }
 
 Brain& Brain::operator = (const Brain &src)
