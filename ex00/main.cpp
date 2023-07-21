@@ -18,10 +18,12 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
-	delete(meta);
 	delete(i);
 	delete(j);
+	delete(meta);
+
 	std::cout<<"============================"<<std::endl;
+
 	const WrongAnimal *k = new WrongCat();
 	std::cout << k->getType() << " " << std::endl;
 	k->makeSound(); 
