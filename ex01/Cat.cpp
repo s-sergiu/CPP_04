@@ -17,12 +17,16 @@ Cat::~Cat()
 Cat::Cat(const Cat &copy) : Animal()
 {
 	brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		brain->setIdea(i, copy.brain->getIdea(i));
 	type = copy.type;	
 }
 
 Cat& Cat::operator = (const Cat &src)
 {
 	this->brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->brain->setIdea(i, src.brain->getIdea(i));
 	this->type = src.type;
 	return *this;
 }
@@ -30,4 +34,16 @@ Cat& Cat::operator = (const Cat &src)
 void Cat::makeSound() const
 {
 	std::cout<<"*Moew*"<<std::endl;
+}
+
+void Cat::generateIdeas(std::string ideas[100])
+{
+	for (int i = 0; i < 100; i++)
+		brain->setIdea(i, ideas[i]);
+}
+
+void Cat::printIdeas()
+{
+	for (int i = 0; i < 100; i++)
+		std::cout<<brain->getIdea(i)<<std::endl;
 }

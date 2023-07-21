@@ -17,12 +17,16 @@ Dog::~Dog()
 Dog::Dog(const Dog &copy) : Animal()
 {
 	brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		brain->setIdea(i, copy.brain->getIdea(i));
 	type = copy.type;	
 }
 
 Dog& Dog::operator = (const Dog &src)
 {
 	this->brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->brain->setIdea(i, src.brain->getIdea(i));
 	this->type = src.type;
 	return *this;
 }
@@ -30,4 +34,16 @@ Dog& Dog::operator = (const Dog &src)
 void Dog::makeSound() const
 {
 	std::cout<<"*Woof*"<<std::endl;
+}
+
+void Dog::generateIdeas(std::string ideas[100])
+{
+	for (int i = 0; i < 100; i++)
+		brain->setIdea(i, ideas[i]);
+}
+
+void Dog::printIdeas()
+{
+	for (int i = 0; i < 100; i++)
+		std::cout<<brain->getIdea(i)<<std::endl;
 }
