@@ -19,12 +19,20 @@ int main()
 	"three",
 	};
 
+	std::string ideas2[100] = { 
+	"four",
+	"five",
+	"seven",
+	};
+
 	Cat basic;
+	Cat basic2;
 	basic.generateIdeas(ideas);
+	basic2.generateIdeas(ideas2);
 	basic.printIdeas();
 
 	std::cout<<"==============================="<<std::endl;
-	Cat basic2 = basic;
-	basic2.printIdeas();
+	Cat basic3= basic;
+	basic3.printIdeas();
 	return 0;
 }

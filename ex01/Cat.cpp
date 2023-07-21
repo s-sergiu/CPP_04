@@ -16,17 +16,18 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &copy) : Animal()
 {
-	brain = new Brain();
-	for (int i = 0; i < 100; i++)
-		brain->setIdea(i, copy.brain->getIdea(i));
-	type = copy.type;	
+	*this = copy;
 }
 
 Cat& Cat::operator = (const Cat &src)
 {
-	this->brain = new Brain();
+	brain = new Brain();
 	for (int i = 0; i < 100; i++)
+	{
+		if (src.brain->getIdea(i).empty())
+			break;
 		this->brain->setIdea(i, src.brain->getIdea(i));
+	}
 	this->type = src.type;
 	return *this;
 }
@@ -45,5 +46,9 @@ void Cat::generateIdeas(std::string ideas[100])
 void Cat::printIdeas()
 {
 	for (int i = 0; i < 100; i++)
+	{
+		if (brain->getIdea(i).empty())
+			break;
 		std::cout<<brain->getIdea(i)<<std::endl;
+	}
 }

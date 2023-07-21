@@ -16,18 +16,13 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &copy) : Animal()
 {
-	brain = new Brain();
-	for (int i = 0; i < 100; i++)	
-	{
-		if (copy.brain->getIdea(i).empty())
-			break;
-		brain->setIdea(i, copy.brain->getIdea(i));	
-	}
-	type = copy.type;	
+	*this = copy;
 }
 
 Cat& Cat::operator = (const Cat &src)
 {
+	brain = new Brain();
+
 	for (int i = 0; i < 100; i++)	
 	{
 		if (src.brain->getIdea(i).empty())

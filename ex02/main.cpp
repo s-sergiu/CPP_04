@@ -11,7 +11,6 @@ int main()
 		new Cat(),
 	};
 
-	Animal test1;
 
 	animals[0]->makeSound();
 	animals[1]->makeSound();

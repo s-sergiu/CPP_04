@@ -16,17 +16,18 @@ Dog::~Dog()
 
 Dog::Dog(const Dog &copy) : Animal()
 {
-	brain = new Brain();
-	for (int i = 0; i < 100; i++)
-		brain->setIdea(i, copy.brain->getIdea(i));
-	type = copy.type;	
+	*this = copy;
 }
 
 Dog& Dog::operator = (const Dog &src)
 {
-	this->brain = new Brain();
+	brain = new Brain();
 	for (int i = 0; i < 100; i++)
+	{
+		if (src.brain->getIdea(i).empty())
+			break;
 		this->brain->setIdea(i, src.brain->getIdea(i));
+	}
 	this->type = src.type;
 	return *this;
 }
@@ -45,5 +46,9 @@ void Dog::generateIdeas(std::string ideas[100])
 void Dog::printIdeas()
 {
 	for (int i = 0; i < 100; i++)
+	{
+		if (brain->getIdea(i).empty())
+			break;
 		std::cout<<brain->getIdea(i)<<std::endl;
+	}
 }
