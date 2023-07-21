@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/22 01:08:59 by ssergiu           #+#    #+#             */
+/*   Updated: 2023/07/22 01:09:00 by ssergiu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Dog.hpp"
 
@@ -16,12 +27,12 @@ Dog::~Dog()
 
 Dog::Dog(const Dog &copy) : Animal()
 {
-	*this = copy;
+	this->brain = new Brain(*copy.brain);
+	this->type = copy.type;
 }
 
 Dog& Dog::operator = (const Dog &src)
 {
-	brain = new Brain();
 	for (int i = 0; i < 100; i++)
 	{
 		if (src.brain->getIdea(i).empty())

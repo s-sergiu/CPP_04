@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/22 01:08:55 by ssergiu           #+#    #+#             */
+/*   Updated: 2023/07/22 01:08:56 by ssergiu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Cat.hpp"
 
@@ -16,12 +27,12 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &copy) : Animal()
 {
-	*this = copy;
+	this->brain = new Brain(*copy.brain);
+	this->type = copy.type;
 }
 
 Cat& Cat::operator = (const Cat &src)
 {
-	brain = new Brain();
 	for (int i = 0; i < 100; i++)
 	{
 		if (src.brain->getIdea(i).empty())
